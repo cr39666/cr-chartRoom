@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>crChat</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div id="join" class="wrapper">
+    <div class="container">
+        <div class="join-main">
+            <div class="join-item">
+                <p class="join-label">输入您的昵称: </p>
+                <input id="join-input" class="join-input"/>
+            </div>
+            <div class="join-item">
+                <p class="join-label">选择您的头像: </p>
+                <div class="join-avatar-list">
+                    <img class="avatar" data-src="img/a.jpeg" src="img/a.jpeg"/>
+                    <img class="avatar" data-src="img/b.jpeg" src="img/b.jpeg"/>
+                    <img class="avatar" data-src="img/c.jpeg" src="img/c.jpeg"/>
+                    <img class="avatar" data-src="img/d.jpeg" src="img/d.jpeg"/>
+                    <img class="avatar" data-src="img/e.jpeg" src="img/e.jpeg"/>
+                    <img class="avatar" data-src="img/f.jpeg" src="img/f.jpeg"/>
+                    <img class="avatar" data-src="img/g.jpeg" src="img/g.jpeg"/>
+                    <img class="avatar" data-src="img/h.jpeg" src="img/h.jpeg"/>
+                </div>
+            </div>
+            <div class="join-item">
+                <button id="join-btn" class="join-btn">加入聊天室</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="chat" class="wrapper" style="display: none;">
+    <div class="container">
+        <div class="left">
+            <div class="top" style="height: 49px;padding-top: 16px;">
+                <h3>聊天室成员列表</h3>
+            </div>
+            <ul id="userList" class="people">
+                <!-- 聊天成员列表 -->
+            </ul>
+        </div>
+        <div class="right">
+            <div class="top"><span><span class="name">CrChat</span></span></div>
+            <div id="chat-list" class="chat">
+                <!-- 聊天窗口 -->
+                <div class="conversation-start">
+                    <span>文明发言</span>
+                </div>
+            </div>
+            <div class="write">
+                <input id="input-msg" type="text"/>
+                <a id="btn-send" href="javascript:;" class="write-link send">发送</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="message">
+    <div>
+        <div id="message-error" class="message-notice" style="display: none;">
+            <div class="message-notice-content">
+                <div class="message-custom-content message-error">
+							<span role="img" aria-label="close-circle" class="anticon anticon-close-circle">
+								<svg viewBox="64 64 896 896" focusable="false" data-icon="close-circle" width="1em"
+                                     height="1em" fill="currentColor" aria-hidden="true"><path
+                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"></path></svg>
+							</span>
+                    <span id="message-content"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
